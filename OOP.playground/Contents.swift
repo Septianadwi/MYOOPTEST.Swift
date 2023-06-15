@@ -49,3 +49,29 @@ let rectangle = Rectangle(length: 5, width: 3)
 let area = rectangle.calculateArea()
 print("Rectangle area: \(area)")
 
+class BankAccount {
+    var balance: Double
+    
+    init(balance: Double) {
+        self.balance = balance
+    }
+    
+    func deposit(amount: Double) {
+        balance += amount
+    }
+    
+    func withdraw(amount: Double) {
+        if amount <= balance {
+            balance -= amount
+        } else {
+            print("Insufficient balance")
+        }
+    }
+}
+
+let bankAccount = BankAccount(balance: 1000)
+bankAccount.deposit(amount: 500)
+print("Current balance: \(bankAccount.balance)")
+bankAccount.withdraw(amount: 200)
+print("Current balance: \(bankAccount.balance)")
+
